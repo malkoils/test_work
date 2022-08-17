@@ -51,3 +51,35 @@
 17/08/2022 15:10:11	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7f7d2ea6f900>)
 
 17/08/2022 15:10:11	(<class 'rarfile.NoRarEntry'>, NoRarEntry('No such file: /home/malk/Документы/PycharmProjects/test_work/unzip'), <traceback object at 0x7f7d2eab4940>)
+
+17/08/2022 16:29:15	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7fe8b5470c00>)
+
+17/08/2022 16:34:51	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7f7a5b10b480>)
+
+17/08/2022 16:39:43	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7f0311cd9a80>)
+
+17/08/2022 16:40:19	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7f0a74071000>)
+
+17/08/2022 16:42:01	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7ff9496207c0>)
+
+17/08/2022 16:42:01	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7ff949620980>)
+
+17/08/2022 16:45:27	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f39d6780b00>)
+
+17/08/2022 16:45:27	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7f39d6780140>)
+
+17/08/2022 16:45:27	(<class 'rarfile.RarCannotExec'>, RarCannotExec('Cannot find working tool'), <traceback object at 0x7f39d6781340>)
+
+17/08/2022 16:46:26	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f165a02e280>)
+
+17/08/2022 16:46:26	(<class 'FileNotFoundError'>, FileNotFoundError(2, 'No such file or directory'), <traceback object at 0x7f165a02fe40>)
+
+17/08/2022 16:47:38	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f71326c9a40>)
+
+17/08/2022 16:48:34	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f2e3af84280>)
+
+17/08/2022 16:53:14	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f610e3a55c0>)
+
+17/08/2022 16:53:29	(<class 'KeyboardInterrupt'>, KeyboardInterrupt(), <traceback object at 0x7f610e393140>)
+
+17/08/2022 16:53:38	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f86aef19080>)
