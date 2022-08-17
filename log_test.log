@@ -83,3 +83,55 @@
 17/08/2022 16:53:29	(<class 'KeyboardInterrupt'>, KeyboardInterrupt(), <traceback object at 0x7f610e393140>)
 
 17/08/2022 16:53:38	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f86aef19080>)
+
+17/08/2022 17:05:21	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7facab6c16c0>)
+
+17/08/2022 17:06:15	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f7526760440>)
+
+17/08/2022 17:08:10	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f015e9fee80>)
+
+17/08/2022 17:08:10	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7f015e9fee80>)
+
+17/08/2022 17:08:52	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f76fb8c9800>)
+
+17/08/2022 17:08:52	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7f76fb8c9900>)
+
+17/08/2022 17:10:57	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7fb72b4459c0>)
+
+17/08/2022 17:10:57	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7fb72b445740>)
+
+17/08/2022 17:11:15	(<class 'ftplib.error_perm'>, error_perm('550 task.rar: No such file or directory'), <traceback object at 0x7f44e9d0fe40>)
+
+17/08/2022 17:11:15	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7f44e9d0d900>)
+
+17/08/2022 17:22:19	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7fd76b3f9ac0>)
+
+17/08/2022 17:22:19	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7fd76b3f93c0>)
+
+17/08/2022 17:22:56	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7f9a5def3040>)
+
+17/08/2022 17:22:56	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7f9a5def16c0>)
+
+17/08/2022 17:24:41	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7f889bbdfa40>)
+
+17/08/2022 17:24:41	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7f889bbdcc40>)
+
+17/08/2022 17:27:06	(<class 'AttributeError'>, AttributeError("'ftp_sc' object has no attribute 'filename'"), <traceback object at 0x7f932ccb9d80>)
+
+17/08/2022 17:27:37	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7f53a8309a80>)
+
+17/08/2022 17:27:37	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7f53a8308a40>)
+
+17/08/2022 17:28:06	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7f7dcd531a80>)
+
+17/08/2022 17:28:06	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7f7dcd530a40>)
+
+17/08/2022 17:31:41	(<class 'patoolib.util.PatoolError'>, PatoolError("file `task.rar' was not found"), <traceback object at 0x7fa90e2f1a00>)
+
+17/08/2022 17:31:41	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7fa90e2f0980>)
+
+17/08/2022 17:32:49	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7f1d25a93280>)
+
+17/08/2022 17:33:43	(<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'sendall'"), <traceback object at 0x7f33a3a56fc0>)
+
+17/08/2022 17:34:52	(<class 'KeyboardInterrupt'>, KeyboardInterrupt(), <traceback object at 0x7f0a3a1d3080>)

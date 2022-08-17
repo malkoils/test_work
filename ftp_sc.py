@@ -8,26 +8,22 @@ import errno
 
 from log import log
 
-#create config to file
-#create depend file
+
+# create config to file
+# create depend file
+# create deleting temp files
+# clean code
 class ftp_sc:
     config_obj = configparser.ConfigParser()
     config_obj.read("config.ini")
     ftp_config = config_obj["ftp"]
     path_config = config_obj["path"]
     ftp = ftplib.FTP
-    filename = ftp_config["target"]
-
 
     def __init__(self):
-        config_obj = configparser.ConfigParser()
-        config_obj.read("config.ini")
-        ftp_config = config_obj["ftp"]
-
         self.connect()
         self.download()
-
-        self.unzip(filename=self.filename)
+        self.unzip(filename=self.ftp_config["target"])
 
     def connect(self):
         try:
@@ -38,35 +34,38 @@ class ftp_sc:
 
     def download(self):
         try:
-            self.filename = self.find_file()
-            self.ftp.cwd(self.filename)
-            self.ftp.retrbinary('RETR %s' % self.filename, open(self.filename, 'wb').write)
+            path = self.path_config["main_path"] + self.path_config["download"]
+            try:
+                os.makedirs(path)
+            except OSError as e:
+                if e.errno != errno.EEXIST:
+                    raise
+            self.ftp.retrbinary('RETR %s' % self.ftp_config["target"], open(self.path_config["download"]+"/"+self.ftp_config["target"], 'wb').write)
             self.ftp.quit()
         except:
             log(sys.exc_info())
 
-    def unzip(self,filename):
-        path = os.path.realpath(__file__).replace(os.path.basename(__file__),"")+self.path_config["temp"]
+    def unzip(self, filename):
+        path = self.path_config["main_path"] + self.path_config["temp"]
         try:
             os.makedirs(path)
         except OSError as e:
             if e.errno != errno.EEXIST:
                 raise
         try:
-            patoolib.extract_archive(filename or self.filename, outdir=path)
+            patoolib.extract_archive(self.path_config["download"]+"/"+self.ftp_config["target"], outdir=path)
             print('unzip')
         except:
             log(sys.exc_info())
-
-
 
     def find_file(self):
         Files = []
         try:
             for filename in self.ftp.nlst():
-                if re.match(".*"+self.filename, filename):
+                if re.match(".*" + self.ftp_config["target"], filename):
                     Files.append(filename)
-            print(Files)
+            print(Files[0])
+            return Files[0] or "no matches"
         except:
             log(sys.exc_info())
-        return Files[0] or "no matches"
+
