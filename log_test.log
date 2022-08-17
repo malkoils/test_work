@@ -1,0 +1,53 @@
+
+
+17/08/2022 14:45:38	None
+
+17/08/2022 14:45:38	None
+
+17/08/2022 14:50:35	None
+
+17/08/2022 14:50:35	None
+
+17/08/2022 14:52:55	None
+
+17/08/2022 14:52:55	None
+
+17/08/2022 14:54:48	None
+
+17/08/2022 14:54:48	None
+
+17/08/2022 14:55:36	None
+
+17/08/2022 14:55:36	None
+
+17/08/2022 14:59:06	None
+
+17/08/2022 14:59:06	None
+
+17/08/2022 14:59:41	None
+
+17/08/2022 14:59:41	None
+
+17/08/2022 14:59:56	None
+
+17/08/2022 14:59:56	None
+
+17/08/2022 15:02:14	<class 'Exception'>
+
+17/08/2022 15:02:14	<class 'Exception'>
+
+17/08/2022 15:04:26	None
+
+17/08/2022 15:04:26	None
+
+17/08/2022 15:05:52	<class 'patoolib.util.PatoolError'>
+
+17/08/2022 15:05:52	<class 'rarfile.NoRarEntry'>
+
+17/08/2022 15:08:31	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7fcfd8278c80>)
+
+17/08/2022 15:08:31	(<class 'rarfile.NoRarEntry'>, NoRarEntry('No such file: /unzip'), <traceback object at 0x7fcfd7ab0600>)
+
+17/08/2022 15:10:11	(<class 'patoolib.util.PatoolError'>, PatoolError('could not find an executable program to extract format rar; candidates are (rar,unrar,7z),'), <traceback object at 0x7f7d2ea6f900>)
+
+17/08/2022 15:10:11	(<class 'rarfile.NoRarEntry'>, NoRarEntry('No such file: /home/malk/Документы/PycharmProjects/test_work/unzip'), <traceback object at 0x7f7d2eab4940>)

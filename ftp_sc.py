@@ -1,43 +1,72 @@
 import ftplib
+import sys
 import re
-import traceback
+import configparser
 import patoolib
 import os
+import errno
+import rarfile
+
+from log import log
+
+#create config to file
 class ftp_sc:
-    ftp_server = "138.201.56.185"
-    ftp_user = "rekrut"
-    ftp_pass = "zI4wG9yM5krQ3d"
-    name_file = "task.rar"
+    config_obj = configparser.ConfigParser()
+    config_obj.read("config.ini")
+    ftp_config = config_obj["ftp"]
     ftp = ftplib.FTP
+    filename = ftp_config["target"]
+
+
     def __init__(self):
+        config_obj = configparser.ConfigParser()
+        config_obj.read("config.ini")
+        ftp_config = config_obj["ftp"]
+
         self.connect()
         self.download()
-       # ftp.retrbinary("RETR " + filename, open(filename, 'wb').write)
-       # ftp.quit()
+
+        self.unzip(filename=self.filename)
 
     def connect(self):
         try:
-            self.ftp = ftplib.FTP(self.ftp_server)
-            self.ftp.login(self.ftp_user, self.ftp_pass)
-        except Exception:
-            traceback.print_exc()
+            self.ftp = ftplib.FTP(self.ftp_config["server"])
+            self.ftp.login(self.ftp_config["user"], self.ftp_config["password"])
+        except:
+            log(sys.exc_info())
+
     def download(self):
         try:
-            filename = self.find_file()
+            self.filename = self.find_file()
             #self.ftp.cwd(filename)
-            self.ftp.retrbinary(filename, open(filename, 'wb').write)
+            self.ftp.retrbinary('RETR %s' % self.filename, open(self.filename, 'wb').write)
             self.ftp.quit()
-            if re.match(".*rar", filename):
-               # os.mkdir("unzip")
-                patoolib.extract_archive(filename, outdir="/unzip")
-                print('unraring')
-        except Exception:
-            traceback.print_exc()
+        except:
+            log(sys.exc_info())
+
+    def unzip(self,filename):
+        path = os.path.realpath(__file__).replace(os.path.basename(__file__),"")+"unzip"
+        try:
+            os.makedirs(path)
+        except OSError as e:
+            if e.errno != errno.EEXIST:
+                raise
+        try:
+            patoolib.extract_archive(filename or self.filename, outdir=path)
+            print('unzip')
+        except:
+            log(sys.exc_info())
+        try:
+            rartemp = rarfile.RarFile(filename)
+            rarfile.RarFile.extract(rartemp,path)
+        except:
+            log(sys.exc_info())
+
 
     def find_file(self):
         Files = []
         for filename in self.ftp.nlst():
-            if re.match(".*"+self.name_file, filename):
+            if re.match(".*"+self.filename, filename):
                 Files.append(filename)
         print(Files)
         return Files[0] or "no matches"
