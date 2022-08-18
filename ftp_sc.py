@@ -21,6 +21,7 @@ class ftp_sc:
     ftp = ftplib.FTP
 
     def __init__(self):
+        print('todo')
         self.connect()
         self.download()
         self.unzip(filename=self.ftp_config["target"])
@@ -69,3 +70,12 @@ class ftp_sc:
         except:
             log(sys.exc_info())
 
+    def send_file(self):
+        print("sending to ftp")
+        self.ftp = ftplib.FTP(self.ftp_config["target_server"])
+        self.ftp.login(self.ftp_config["target_user"], self.ftp_config["target_password"])
+        file = open(self.path_config["main_path"]+self.path_config["result"]+self.path_config["result_name"], 'rb')  # file to send
+        self.ftp.storbinary('STOR /complete/'+self.path_config["result_name"], file)  # send the file
+        file.close()  # close file and FTP
+        self.ftp.quit()
+        print("complete")
