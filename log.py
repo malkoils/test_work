@@ -1,5 +1,7 @@
 from datetime import datetime
 import os
+
+
 def log(error):
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -7,5 +9,5 @@ def log(error):
         f = open("log_test.log", "a")
     else:
         f = open("log_test.log", "x")
-    f.write("\n\n"+dt_string+"\t"+str(error))
+    f.write("\n\n" + dt_string + "\t" + str(error))
     f.close()

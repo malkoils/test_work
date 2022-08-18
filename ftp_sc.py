@@ -41,7 +41,8 @@ class ftp_sc:
             except OSError as e:
                 if e.errno != errno.EEXIST:
                     raise
-            self.ftp.retrbinary('RETR %s' % self.ftp_config["target"], open(self.path_config["download"]+"/"+self.ftp_config["target"], 'wb').write)
+            self.ftp.retrbinary('RETR %s' % self.ftp_config["target"],
+                                open(self.path_config["download"] + "/" + self.ftp_config["target"], 'wb').write)
             self.ftp.quit()
         except:
             log(sys.exc_info())
@@ -54,7 +55,7 @@ class ftp_sc:
             if e.errno != errno.EEXIST:
                 raise
         try:
-            patoolib.extract_archive(self.path_config["download"]+"/"+self.ftp_config["target"], outdir=path)
+            patoolib.extract_archive(self.path_config["download"] + "/" + self.ftp_config["target"], outdir=path)
             print('unzip')
         except:
             log(sys.exc_info())
@@ -74,8 +75,9 @@ class ftp_sc:
         print("sending to ftp")
         self.ftp = ftplib.FTP(self.ftp_config["target_server"])
         self.ftp.login(self.ftp_config["target_user"], self.ftp_config["target_password"])
-        file = open(self.path_config["main_path"]+self.path_config["result"]+self.path_config["result_name"], 'rb')  # file to send
-        self.ftp.storbinary('STOR /complete/'+self.path_config["result_name"], file)  # send the file
+        file = open(self.path_config["main_path"] + self.path_config["result"] + self.path_config["result_name"],
+                    'rb')  # file to send
+        self.ftp.storbinary('STOR /complete/' + self.path_config["result_name"], file)  # send the file
         file.close()  # close file and FTP
         self.ftp.quit()
         print("complete")

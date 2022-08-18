@@ -94,15 +94,15 @@ class db:
     ## slow but safety
     def Insert(self, name=" ", columns=" ", value=" "):
         SQL = "INSERT INTO " + name + " (" + ",".join(str(e) for e in columns) + ") VALUES (%s" + ",%s" * (
-                    len(columns) - 1) + ");"
-        #print(SQL, value)
+                len(columns) - 1) + ");"
+        # print(SQL, value)
         try:
             self.cursor.execute(SQL, value)
-            self.cnx.commit() #slow but work when fast dont work
+            self.cnx.commit()  # slow but work when fast dont work
         except mysql.connector.Error as err:
             log(err)
 
-    def Custom_sql(self,SQL):
+    def Custom_sql(self, SQL):
 
         try:
             self.cursor.execute(SQL)
